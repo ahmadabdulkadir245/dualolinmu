@@ -6,7 +6,7 @@ function Banner() {
         
         <div>
             <h1 className='text-6xl'>
-                Aliyu's Daily Blog 
+                Aliyu&rsquo;s Daily Blog 
             </h1>
             <h2 className='mt-5 md:mt-0'>
                 Welcome to{" "}
