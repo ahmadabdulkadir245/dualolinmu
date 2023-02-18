@@ -34,18 +34,18 @@ function BlogList({posts}: Props) {
                       </div>
 
                       <div className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 py-1 rounded-full text-sm font-semibold">
-                            {/* {post.categories.map((category) => (
+                            {post.categories.map((category) => (
                                 <div key={category._id} className="bg-[#f7aboa] text-center text-black px-3 py-1 rounded-full text-sm font-semibold">
                                     <p>category.title</p>
                                 </div>
-                            ))} */}
+                            ))}
                             
                       </div>
                 </div>
 
                             <div className="mt-5 flex-1">
                                 <p className="underline text">{post.title}</p>
-                                <p className="line-clamp-2 text-gray-500">{post.description}</p>
+                                {/* <p className="line-clamp-2 text-gray-500">{post.description}</p> */}
                             </div>
                             <p className="mt-5 font-bold items-center group-hover:underline  flex">
                                 Read Post

@@ -2,7 +2,7 @@ import {groq} from "next-sanity"
 import Image from "next/image"
 import { client } from "../../../../lib/sanity.client"
 import urlfor from "../../../../lib/urlFor"
-import PortableText from "react-portable-text"
+import {PortableText} from '@portabletext/react'
 
 import { RichtextComponents } from "../../../../components/RichTextComponents" 
 
@@ -96,7 +96,7 @@ async function Post({params: {slug}}: Props) {
         </div>
       </section>
 
-      {/* <PortableText value={post.body}  components={RichtextComponents}/>  */}
+      <PortableText value={post.body}  components={RichtextComponents}/> 
       </article>
   )
 }
