@@ -4,14 +4,14 @@ import { client } from "../../../../lib/sanity.client"
 import urlfor from "../../../../lib/urlFor"
 import {PortableText} from '@portabletext/react'
 
-import { RichtextComponents } from "../../../../components/RichTextComponents" 
+// import { RichtextComponents } from "../../../../components/RichTextComponents" 
 
 type Props = {
     params: {
     slug: string
 }
 }
-const components = RichtextComponents
+// const components = RichtextComponents
 
 export const revalidate = 60 // this will revalidate this page after every 60 seconds
 
