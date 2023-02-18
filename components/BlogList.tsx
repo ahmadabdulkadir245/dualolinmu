@@ -45,6 +45,7 @@ function BlogList({posts}: Props) {
 
                             <div className="mt-5 flex-1">
                                 <p className="underline text">{post.title}</p>
+                                {/* <p className="line-clamp-2 text-gray-500">{post.description}</p> */}
                             </div>
                             <p className="mt-5 font-bold items-center group-hover:underline  flex">
                                 Read Post
