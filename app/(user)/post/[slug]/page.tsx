@@ -11,6 +11,7 @@ type Props = {
     slug: string
 }
 }
+const components = RichtextComponents
 
 export const revalidate = 60 // this will revalidate this page after every 60 seconds
 
@@ -96,7 +97,7 @@ async function Post({params: {slug}}: Props) {
         </div>
       </section>
 
-      <PortableText value={post.body}  components={RichtextComponents}/> 
+      <PortableText value={post.body}  /> 
       </article>
   )
 }
