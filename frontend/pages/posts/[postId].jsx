@@ -9,6 +9,7 @@ import { RxInstagramLogo } from "react-icons/rx"
 import { SlSocialInstagram } from "react-icons/sl"
 import Footer from "../../components/Footer"
 import Header from "../../components/Header"
+import Image from 'next/legacy/image'
 
 function Post({post, posts}) {
   return (

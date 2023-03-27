@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import dynamic from "next/dynamic";
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 const ReactQuill = dynamic(import('react-quill'), { ssr: false })
 function AddPost() {
   const [value, setValue] = useState('')
@@ -114,7 +115,7 @@ function AddPost() {
         </button>
       )}
         </form>
-
+        <Footer/>
     </div>
   )
 }
