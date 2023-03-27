@@ -16,7 +16,7 @@ function Home({posts}) {
           <div className="hidden md:grid w-full h-[350px] mt-10 bg-gray-300 text-gray-800 capitalize font-bold text-center  place-content-center">
             Home page image
           </div>
-            <h1 className="text-[#333] text-5xl xs:text-6xl font-bold py-5">Aliyu's Daily Blog</h1>
+            <h1 className="text-[#333] text-5xl xs:text-6xl font-bold py-5">Aliyu&apos;s Daily Blog</h1>
             <p className="font-semibold  font-poppins tracking-wide leading-6">Welcome To Daulolinmu Blog,the best blog to get the latest news and updates on Culture, Royalty, Language, Food, Marriage and Relationships.</p>
         </div>
         <div
