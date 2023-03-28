@@ -2,7 +2,6 @@ import { app } from "../firebase";
 import { useRouter } from "next/router";
 import {
   getAuth,
-  createUserWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
@@ -32,7 +31,7 @@ const [err, setError] = useState(null)
   }
     const submitHandler = async (e) => {
       e.preventDefault()
-      if (emailIsValid && passwordIsValid && passwordIsEqual) {
+      // if (emailIsValid && passwordIsValid && passwordIsEqual) {
         try{
           const res = await axios.post(process.env.SIGNUP_URL, inputs)
           router.push('/login')
@@ -46,10 +45,10 @@ const [err, setError] = useState(null)
           console.log(err)
         }
       }
-      else {
-        console.log('Invalid email or password do not match')
-      }
-    }
+      // else {
+      //   console.log('Invalid email or password do not match')
+      // }
+    // }
 
       const signInGoogle = async () => {
         signInWithPopup(auth, googleProvider)

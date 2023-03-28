@@ -1,0 +1,12 @@
+{
+    "env": {
+        "DB_HOST": "sql.freedb.tech",
+        "DB_USER": "freedb_theblogadmin",
+        "DB_DATABASE": "freedb_theblogdb",
+        "DB_PASSWORD": "B4!#!GW!sRPt!G*",
+        "DB_DIALECT": "mysql",
+        "CLOUD_NAME": "dxc8mersm",
+        "CLOUD_KEY": "646419695974377",
+        "CLOUD_KEY_SECRET": "w8rED2f0vt2FKpfuXslWTAAkXQQ"
+    }
+}
