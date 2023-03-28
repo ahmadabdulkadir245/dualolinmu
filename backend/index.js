@@ -82,10 +82,13 @@ app.post('/post-image', cloudinaryPostImageUpload.single('image'), (req, res) =>
   });
 });
 
-// app.post("/api/upload", upload.single("file"), function (req, res) {
-//   const file = req.file;
-//   res.status(200).json(file.filename);
-// });
+// Send a ping request to the MySQL server every 5 minutes
+setInterval(() => {
+  pool.query('SELECT 1', (err, rows) => {
+    if (err) throw err;
+    console.log('Ping sent to MySQL server');
+  });
+}, 5 * 60 * 1000);
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
