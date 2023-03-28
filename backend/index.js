@@ -9,6 +9,7 @@
 
 // using normal imports
 const express = require('express')
+require("dotenv").config()
 const cors = require('cors')
 const path = require('path')
 const multer = require('multer');
@@ -26,7 +27,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: '*',    
+  origin: '*', 
 }));
 app.use(cors({
   methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
