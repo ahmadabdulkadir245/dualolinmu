@@ -32,6 +32,13 @@ app.use(cors({
   methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }));
 
+//  for production
+const helmet = require('helmet');
+const compression = require('compression');
+
+app.use(helmet());
+app.use(compression());
+
 // image upload
 const fileFilter = (req, file, cb) => {
   if (
