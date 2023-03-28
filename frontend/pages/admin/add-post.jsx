@@ -23,7 +23,7 @@ function AddPost() {
     const formData = new FormData();
     formData.append('image', image);
 
-    fetch(process.env.POST_IMAGE_URL, {
+    fetch(process.env.NEXT_PUBLIC_POST_IMAGE_URL, {
       method: 'POST',
       body: formData
     })   
@@ -39,7 +39,7 @@ function AddPost() {
         image: image,
         // description: value
       }
-    fetch(process.env.ADD_POST_URL, {
+    fetch(process.env.NEXT_PUBLIC_ADD_POST_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

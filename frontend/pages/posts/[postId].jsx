@@ -96,10 +96,10 @@ export default Post
 
 export const getServerSideProps = async (context) => {
     const {postId} = context.query
-    const res = await axios.get(process.env.POST_URL + `/${postId}`)
+    const res = await axios.get(process.env.NEXT_PUBLIC_POST_URL + `/${postId}`)
     const post =  await res.data
 
-    const resPosts = await axios.get(process.env.POST_URL)
+    const resPosts = await axios.get(process.env.NEXT_PUBLIC_POST_URL)
   const posts = await resPosts.data
     return {
         props: {

@@ -16,12 +16,12 @@ export const AuthContextProvider = ({children}) => {
     const [currentUser, setCurrenctUser] = useState(user || null);
 
     const login = async (inputs) => {
-    const res = await axios.post(process.env.LOGIN_URL, inputs)
+    const res = await axios.post(process.env.NEXT_PUBLIC_LOGIN_URL, inputs)
     setCurrenctUser(res.data)
     }
 
     const logout = async () => {
-     await axios.post(process.env.LOGOUT_URL)
+     await axios.post(process.env.NEXT_PUBLIC_LOGOUT_URL)
     setCurrenctUser(null)
     }
 

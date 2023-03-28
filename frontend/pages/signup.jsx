@@ -33,7 +33,7 @@ const [err, setError] = useState(null)
       e.preventDefault()
       // if (emailIsValid && passwordIsValid && passwordIsEqual) {
         try{
-          const res = await axios.post(process.env.SIGNUP_URL, inputs)
+          const res = await axios.post(process.env.NEXT_PUBLIC_SIGNUP_URL, inputs)
           router.push('/login')
           setInputs({
             email: '',

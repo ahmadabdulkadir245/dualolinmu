@@ -46,7 +46,7 @@ export default function HomePage({posts}) {
 }
 
 export const getServerSideProps = async (context) => {
-  const res = await axios.get(process.env.POST_URL)
+  const res = await axios.get(process.env.NEXT_PUBLIC_POST_URL)
   const posts =  await res.data
 
   return {

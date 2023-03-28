@@ -6,7 +6,7 @@ module.exports = {
   optimizeFonts: true,
   images: {
         domains: ['www.shutterstock.com', 'images.pexels.com', "www.pexels.com", "media.istockphoto.com", "images.unsplash.com", "res.cloudinary.com"],
-  },
+  }
 }
 
 
