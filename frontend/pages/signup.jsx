@@ -42,7 +42,8 @@ const [err, setError] = useState(null)
             confirmPassword: ''
           })
         }catch(err) {
-          setError(err.response.data)
+          // setError(err.response.data)
+          console.log(err)
         }
       }
       else {

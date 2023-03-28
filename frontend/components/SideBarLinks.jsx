@@ -26,6 +26,7 @@ function SideBarLinks() {
         <SideBarLink Icon={GiWoodBeam} title={'royalty'} path={'/'}/>
         <SideBarLink Icon={MdConstruction} title={'relationships'} path={'/'}/>
         <SideBarLink Icon={GiConcreteBag} title={'marriage'} path={'/'}/>
+        <SideBarLink Icon={GiConcreteBag} title={'add posts'} path={'/admin/add-post'}/>
     </div>
   )
 }
