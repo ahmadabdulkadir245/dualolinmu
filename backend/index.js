@@ -94,6 +94,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 
-app.listen(4000, () => {
-  console.log("Connected!");
-});
+const PORT = process.env.PORT || 4000
+
+app.listen(PORT, () => {
+  console.log("Server is running....")
+})
