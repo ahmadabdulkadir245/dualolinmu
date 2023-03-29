@@ -1061,8 +1061,31 @@ module.exports = {
     wordBreak: ["responsive"],
     zIndex: ["responsive", "focus-within", "focus"],
   },
+  typography: (theme) => ({
+    DEFAULT: {
+      css: {
+        color: theme('colors.gray.100'),
+        h2: {
+          color: theme('colors.gray.800'),
+        },
+        h3: {
+          color: theme('colors.gray.800'),
+        },
+        strong: {
+          color: theme('colors.gray.800'),
+        },
+        a: {
+          color: theme('colors.green.500'),
+          '&:hover': {
+            color: theme('colors.green.600')
+          },
+        },
+      },
+    },
+  }),
   plugins: [
   require('@tailwindcss/line-clamp'),
-  require('tailwind-scrollbar-hide')
+  require('tailwind-scrollbar-hide'),
+  require('@tailwindcss/typography'),
   ],
 };

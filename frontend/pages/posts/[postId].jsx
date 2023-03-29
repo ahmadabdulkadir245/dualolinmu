@@ -28,11 +28,11 @@ function Post({post, posts}) {
       </div>
 
       <div>
-      <h3 className='text-3xl capitalize font-poppins'>{post.title}</h3>
+      <h3 className='text-4xl capitalize font-poppins'>{post.title}</h3>
       <div  className='pt-8' >
             {post.image ?
-             <div className="relative w-full h-[250px]">
-            <Image src={post.image} alt={post.title} layout="fill" className='' 
+             <div className="relative w-full h-[400px] shadow-sm">
+            <Image src={post.image} alt={post.title} layout="fill" objectFit="contain"
             />
             </div> 
             : 
@@ -60,16 +60,10 @@ function Post({post, posts}) {
           </Link>
         </div>
         <div className="lg:px-[50px] font-poppins text-gray-700 tracking-wide leading-7 font-">
-         <p>
-         {post.desc} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam tenetur totam, veritatis voluptate mollitia dicta corporis fuga accusamus sit explicabo optio repellat aliquid quasi asperiores odit, ullam iure quos aliquam eveniet dolorum accusantium deserunt quidem similique et. Earum.
-         </p>
-            <br />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit officiis deserunt provident deleniti perferendis ullam ratione beatae ipsum neque quo molestiae, unde ipsa! At illo ea totam, provident nulla ut ducimus vel. Repellat similique pariatur ad maxime nobis possimus nesciunt sunt dolorem quo corrupti iure voluptatem, aspernatur, molestiae rerum architecto.
-          </p>
-            <br />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit officiis deserunt provident deleniti perferendis ullam ratione beatae ipsum neque quo molestiae, unde ipsa! At illo ea totam, provident nulla ut ducimus vel. Repellat similique pariatur ad maxime nobis possimus nesciunt sunt dolorem quo corrupti iure voluptatem, aspernatur, molestiae rerum architecto.
-          </p>
-        </div>
+          <article className="prose prose-h1:text-3xl   prose-h1:font-semibold prose-h2:text-3xl prose-headings:capitalize prose-a:text-blue-500 hover:prose-a:text-blue-800 font-poppins" dangerouslySetInnerHTML={{ __html: post.desc }} />
+          {post.desc}
+         <br />
+                </div>
           <div className="hidden lg:block w-[650px] mx-auto">
           {posts.slice(0,3).map(post => (
           <Link href={`/posts/${post.id}`} key={post.id}>
