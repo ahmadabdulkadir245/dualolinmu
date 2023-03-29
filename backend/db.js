@@ -9,4 +9,7 @@ const db = mysql.createConnection({
   connectionLimit: 10,
   queueLimit: 0
 })
-module.exports = db
+connection.on('error', (err) => {
+  console.error('MySQL error:', err);
+});
+module.exports = db.promise()
