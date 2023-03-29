@@ -37,7 +37,7 @@ app.use(cors({
 const helmet = require('helmet');
 const compression = require('compression');
 
-app.use(helmet());
+// app.use(helmet());
 app.use(compression());
 
 // image upload
@@ -82,13 +82,7 @@ app.post('/post-image', cloudinaryPostImageUpload.single('image'), (req, res) =>
   });
 });
 
-// Send a ping request to the MySQL server every 5 minutes
-setInterval(() => {
-  pool.query('SELECT 1', (err, rows) => {
-    if (err) throw err;
-    console.log('Ping sent to MySQL server');
-  });
-}, 5 * 60 * 1000);
+
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
