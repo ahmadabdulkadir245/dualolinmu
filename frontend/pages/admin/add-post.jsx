@@ -2,13 +2,40 @@ import { useState } from 'react';
 import dynamic from "next/dynamic";
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-const ReactQuill = dynamic(import('react-quill'), { ssr: false })
+const QuillNoSSRWrapper = dynamic(import('react-quill'), {
+  ssr: false,
+  loading: () => <p>Loading ...</p>,
+})
+const modules = {
+  toolbar: [
+    [{ header: '1' }, { header: '2' }, { header: '3' }, { font: [] }],
+    [{ size: [] }],
+    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+    [
+      { list: 'ordered' },
+      { list: 'bullet' },
+      { indent: '-1' },
+      { indent: '+1' },
+    ],
+    ['link', 'image', 'video'],
+    ['clean'],
+  ],
+  clipboard: {
+    // toggle to add extra line breaks when pasting HTML:
+    matchVisual: false,
+  },
+}
+
 function AddPost() {
   const [value, setValue] = useState('')
   const [inputs, setInputs] = useState({
     title: '',
     category: ''
   })
+  const [content, setContent] = useState('');
+  const [isDraft, setIsDraft] = useState(true);
+  const [isPublished, setIsPublished] = useState(false);
+
   const inputHandler = (e) => {
     setInputs(prev => ({...prev, [e.target.name]: e.target.value}))
   }
@@ -37,7 +64,9 @@ function AddPost() {
         title: inputs.title,
         category: inputs.category,
         image: image,
-        // description: value
+        description: content,
+        isDraft: isDraft,
+        isPublished: isPublished
       }
     fetch(process.env.NEXT_PUBLIC_ADD_POST_URL, {
     method: 'POST',
@@ -97,7 +126,7 @@ function AddPost() {
               onChange={handleFileInputChange}
             />
       <div className="  font-semibold text-gray-500 h-[300px] overflow-y-scroll shadow-md border border-gray-400 rounded-md overflow-hidden">
-      <ReactQuill theme="snow" value={value} onChange={setValue}  />
+      <QuillNoSSRWrapper modules={modules} onChange={setContent} theme="snow" />
       </div>
       {isUpdate ? (
         <button
@@ -115,6 +144,8 @@ function AddPost() {
         </button>
       )}
         </form>
+
+        {content}
         <Footer/>
     </div>
   )
