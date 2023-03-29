@@ -11,7 +11,6 @@
 const express = require('express')
 require("dotenv").config()
 const cors = require('cors')
-const path = require('path')
 const multer = require('multer');
 const authRoutes = require("./routes/auth")
 const userRoutes = require("./routes/users")
@@ -19,6 +18,7 @@ const postRoutes = require("./routes/posts")
 const cloudinary = require("./util/cloudinary")
 const cookieParser = require("cookie-parser")
 const {CloudinaryStorage} = require('multer-storage-cloudinary')
+require("dotenv").config()
 
 
 
