@@ -103,6 +103,11 @@ function Navigation() {
                 <Link href='/'>
               <p className='hover:text-gray-400 transition-all duration-500 linear'>marriage</p>
                 </Link>
+                {currentUser && 
+                   <Link href='/admin/add-post'>
+                   <p className='hover:text-gray-400 transition-all duration-500 linear'>add post</p>
+                     </Link>
+                }
               </div>
 
                  {/*  Right*/}

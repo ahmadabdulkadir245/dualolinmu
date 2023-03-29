@@ -6,6 +6,9 @@ const QuillNoSSRWrapper = dynamic(import('react-quill'), {
   ssr: false,
   loading: () => <p>Loading ...</p>,
 })
+// context
+import { AuthContext } from "../../context/authContext";
+import { useContext } from 'react';
 const modules = {
   toolbar: [
     [{ header: '1' }, { header: '2' }, { header: '3' }, { font: [] }],
@@ -27,6 +30,7 @@ const modules = {
 }
 
 function AddPost() {
+  const {currentUser} = useContext(AuthContext)
   const [value, setValue] = useState('')
   const [inputs, setInputs] = useState({
     title: '',
@@ -93,9 +97,14 @@ function AddPost() {
     })
     .catch(err => console.log(err))
 }
+console.log(currentUser)
   return (
     <div>
       <Header/>
+      {!currentUser ?
+     (<p className="text-3xl gird place-content-center place-items-center text-center h-screen pt-52 uppercase">user not logged in </p>)
+  :
+  <>
       <h2 className='text-center font-semibold text-2xl  py-6 tracking-wide'>CREATE POST</h2>
       {success &&
           <p className="text-center text-xl text-green-400 mt-2 transition-all duration-300 ease-out">product add successfully </p>
@@ -144,8 +153,8 @@ function AddPost() {
         </button>
       )}
         </form>
-
-        {content}
+      </>
+        }
         <Footer/>
     </div>
   )
