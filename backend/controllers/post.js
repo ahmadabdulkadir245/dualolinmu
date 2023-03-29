@@ -34,7 +34,7 @@ exports.addPost = (req, res) => {
   //   if (err) return res.status(403).json("Token is not valid!");
 
     const q =
-      "INSERT INTO posts(`title`, `desc`, `image`, `category`, `uid`) VALUES (?)";
+      "INSERT INTO posts(`title`, `desc`, `image`, `category`, `userId`) VALUES (?)";
 
     const values = [
       req.body.title,
@@ -60,7 +60,7 @@ exports.deletePost = (req, res) => {
     if (err) return res.status(403).json("Token is not valid!");
 
     const postId = req.params.id;
-    const q = "DELETE FROM posts WHERE `id` = ? AND `uid` = ?";
+    const q = "DELETE FROM posts WHERE `id` = ? AND `userId` = ?";
 
     db.query(q, [postId, userInfo.id], (err, data) => {
       if (err) return res.status(403).json("You can delete only your post!");
@@ -79,7 +79,7 @@ exports.updatePost = (req, res) => {
 
     const postId = req.params.id;
     const q =
-      "UPDATE posts SET `title`=?,`desc`=?,`img`=?,`cat`=? WHERE `id` = ? AND `uid` = ?";
+      "UPDATE posts SET `title`=?,`desc`=?,`img`=?,`cat`=? WHERE `id` = ? AND `userId` = ?";
 
     const values = [req.body.title, req.body.desc, req.body.img, req.body.cat];
 
